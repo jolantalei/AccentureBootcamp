@@ -10,12 +10,10 @@ public class MultiplicationTable {
         for (int row = 0; row < table.length; row++){//adding numbers to table
             for (int column = 0; column < table[row].length; column++){
                 table [row][column] = (row+1)  * (column+1);
+                System.out.printf("%6d",table [row][column]);
             }
+            System.out.println();
         }
-        //printing array, replace for formating
-        System.out.println(Arrays.deepToString(table).replace("],","\n").replace(",","\t| ")
-                .replaceAll("[\\[\\]]", " "));
-
     }
 
 
