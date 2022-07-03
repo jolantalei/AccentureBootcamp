@@ -12,7 +12,7 @@ public class Task2 {
 
     }
 
-    static void compareNumbers() {
+    static void compareNumbers () {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter value a: ");
@@ -77,6 +77,13 @@ public class Task2 {
         } else {
             System.out.println(b1);
         }
+    }
+
+    public static int sum (int a, int b){
+        a = 10;
+        b= 11;
+        int sum = a+ b;
+        return sum;
     }
 
 }

@@ -1,13 +1,12 @@
 package Tasks4;
 
-import java.io.File;
-import java.io.FileWriter;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
 public class ExtraTasks {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         // 1. declare and initialize String array with 7 arbitrary colors.
 // 2. Create new list "colors" (ArrayList) of type String
 // 3. Copy/add all elements from String array to colors list
@@ -43,10 +42,28 @@ public class ExtraTasks {
         // Bonus:
         // Ignore case sensitivity. For example, Apple and apple should be counted as the same word.
         //Hint: to get the text as an String array can be regular expression used e.g.: String[] words = Text.TEXT.split("\\s+");
-        FileWriter myWriter = new FileWriter("C:\\Users\\jolan\\IdeaProjects\\Bootcamp\\src\\Tasks4\\TestFile.txt");
-        myWriter.close();
 
+        try {
+            FileReader fileReader = new FileReader("src/TestFile.txt");
+            Scanner scanner = new Scanner(fileReader);
+            String stringLine;
+            ArrayList<String> textString = new ArrayList<String>();
+            HashSet<String> hashSetset = new HashSet<String>();
 
+            while (scanner.hasNext()) {
+                textString.add(scanner.next());
+            }
+            scanner.close();
+            System.out.println(textString);
+            hashSetset.addAll(textString);
+            textString.clear();
+            textString.addAll(hashSetset);
 
+            System.out.println(textString);
+            System.out.println(textString.size());
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
     }
 }
